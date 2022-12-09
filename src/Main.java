@@ -6,6 +6,7 @@ public class Main {
         task4();
         task5();
         task6();
+        task7();
     }
 
     public static void task1() {
@@ -78,5 +79,13 @@ public class Main {
             }
         }
         System.out.println(months);
+    }
+    public static void task7() {
+        System.out.println("Задача 7");
+        int day = 5;
+        while (day < 31) {
+            System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет");
+            day = day + 7;
+        }
     }
 }
