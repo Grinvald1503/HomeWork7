@@ -5,6 +5,7 @@ public class Main {
         task3();
         task4();
         task5();
+        task6();
     }
 
     public static void task1() {
@@ -43,10 +44,10 @@ public class Main {
     }
     public static void task4() {
         System.out.println("Задача 4");
-        double total = 0;
+        int total = 15000;
         int months = 0;
         while(total < 12_000_000) {
-            total = total + 15000 + (total * 0.07);
+            total = total + (total / 100 * 7);
             months++;
             System.out.println(total);
 
@@ -55,12 +56,24 @@ public class Main {
     }
     public static void task5() {
         System.out.println("Задача 5");
-        double total = 0;
+        int total = 15000;
         int months = 0;
         while (total < 12_000_000) {
-            total = total + 15000 + (total * 0.07);
+            total = total + (total / 100 * 7);
             months++;
             if(months % 6 == 0) {
+                System.out.println(total);
+            }
+        }
+        System.out.println(months);
+    }
+    public static void task6() {
+        System.out.println("Задача 6");
+        int total = 15000;
+        int months = 12 * 9;
+        for(int i = 1; i < months; i++) {
+            total = total + (total / 100 * 7);
+            if(i % 6 == 0) {
                 System.out.println(total);
             }
         }
