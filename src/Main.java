@@ -12,10 +12,12 @@ public class Main {
 
     public static void task1() {
         System.out.println("Задача 1");
-        double total = 0;
+        int total = 0;
+        int contribution = 15000;
         int months = 0;
         while (total < 2_459_000) {
-            total = total + 15000 + (total * 0.01);
+            int percent = total / 100;
+            total = total + contribution + percent;
             months++;
             System.out.println(total);
         }
@@ -38,21 +40,25 @@ public class Main {
 
     public static void task3() {
         System.out.println("Задача 3");
-        int population = 1000;
+        int population = 12_000_000;
+        int statistics = 1000;
         int wasBorn = 17;
         int died = 8;
-        for (int i = 1; i <= 10; i++) {
-            population = population + wasBorn - died;
-            System.out.println("Год " + i + ", численность населения составляет " + population);
+        for (int year = 1; year <= 10; year++) {
+            population = population + (population / statistics * wasBorn) - (population / statistics * died);
+            System.out.println("Год " + year + ", численность населения составляет " + population);
         }
     }
 
     public static void task4() {
         System.out.println("Задача 4");
+        int purpose = 12_000_000;
         int total = 15000;
         int months = 0;
-        while (total < 12_000_000) {
-            total = total + (total / 100 * 7);
+
+        while (total < purpose) {
+            int percent = total / 100 * 7;
+            total = total + percent;
             months++;
             System.out.println(total);
 
@@ -65,7 +71,8 @@ public class Main {
         int total = 15000;
         int months = 0;
         while (total < 12_000_000) {
-            total = total + (total / 100 * 7);
+            int percent = total / 100 * 7;
+            total = total + percent;
             months++;
             if (months % 6 == 0) {
                 System.out.println(total);
@@ -78,9 +85,10 @@ public class Main {
         System.out.println("Задача 6");
         int total = 15000;
         int months = 12 * 9;
-        for (int i = 1; i < months; i++) {
-            total = total + (total / 100 * 7);
-            if (i % 6 == 0) {
+        for (int month = 1; month < months; month++) {
+            int percent = total / 100 * 7;
+            total = total + percent;
+            if (month % 6 == 0) {
                 System.out.println(total);
             }
         }
@@ -90,7 +98,7 @@ public class Main {
     public static void task7() {
         System.out.println("Задача 7");
         int day = 5;
-        while (day < 31) {
+        while (day <= 31) {
             System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет");
             day = day + 7;
         }
@@ -99,8 +107,9 @@ public class Main {
     public static void task8() {
         System.out.println("Задача 8");
         int age = 0;
-        int age1 = 1822;
-        int age2 = 2122;
+        int currentYear = 2022;
+        int age1 = currentYear - 200;
+        int age2 = currentYear + 100;
         while (age < age2) {
             age = age + 79;
             if (age >= age1 && age <= age2) {
