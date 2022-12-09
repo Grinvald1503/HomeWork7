@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         task1();
+        task2();
     }
 
     public static void task1() {
@@ -14,6 +15,18 @@ public class Main {
         }
         System.out.println(months);
 
+    }
+    public static void task2() {
+        System.out.println("Задача 2");
+        int a = 1;
+        while (a <= 10) {
+            System.out.print(a + " ");
+            a++;
+        }
+        System.out.println();
+        for(int i = 10; i > 0; i--) {
+            System.out.print(i + " ");
+        }
     }
 
 }
